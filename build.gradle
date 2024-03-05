@@ -11,6 +11,12 @@ java {
 	sourceCompatibility = '17'
 }
 
+//  -plain 이 붙은 jar 파일은 의존성을 포함하지 않는 jar 파일이다.
+//  따라서 plain 파일을 제외하고 일반 jar 파일을 생성하기 위한 코드이다.
+jar {
+	enabled = false
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
