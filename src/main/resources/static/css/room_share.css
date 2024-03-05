@@ -1,0 +1,236 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 5% 88% 0% 7%;
+}
+
+main.over {
+    grid-template-rows: 5% 78% 10% 7%;
+}
+
+.min-share {
+    background-color: rgb(26, 31, 39);
+    height: auto;
+}
+
+
+.room-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(12, 15, 19);
+
+    span { 
+        font-size: 1.5rem; 
+        color: var(--light-gray) 
+    };
+}
+
+.share {
+    background-color: rgb(19, 23, 29);
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.grid-1 .user {
+    width: 80%;
+    height: 80%;
+}
+.grid-1.over .user {
+    height: 90%;
+}
+.grid-4 .user {
+    width: 50%;
+    height: 50%;
+}
+.grid-6 .user {
+    width: 33%;
+    height: 45%;
+}
+.grid-9 .user {
+    width: 33%;
+    height: 33%;
+}
+.user {
+    padding: 0.2rem;
+    cursor: pointer;
+
+}
+.user * {
+    pointer-events: none;
+}
+.user.speak .user-content {
+    border: 0.25rem solid rgb(5, 154, 5);
+}
+.user-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(9, 9, 17);
+    border-radius: 0.5rem;
+    position: relative;
+}
+.user-screen {
+    width: 100%;
+    height: 100%;
+}
+.user-detail {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    background-color: rgba(27, 27, 57, 0.5);
+}
+
+
+.micOn {
+    fill: rgb(68, 202, 70);
+}
+.micOff {
+    fill: var(--error-color);
+}
+
+/* 작은 화면 min-share */
+.min-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    .user-content {
+        overflow: hidden;
+    }
+    .user-detail {
+        left: 0;
+        bottom: 0.1rem;
+    }
+    .user {
+        width: 7rem;
+        height: 5rem;
+        overflow: hidden;
+    }
+
+    svg {
+        display: none;
+    }
+
+    span {
+        font-size: 0.7rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+
+/* 화면 컨트롤러 */
+.controller {
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+.menu-list {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.menu {
+    width: 5rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 1rem;
+    * { pointer-events: none }
+}
+.menu svg {
+    width: 25px;
+    height: 25px;
+}
+.menu:hover {
+    background-color: rgb(22, 26, 32);;
+}
+:root {
+    --on : rgb(98, 235, 64);
+}
+.menu.on {
+
+    svg { fill: var(--on) }
+    span { color: var(--on)}
+}
+
+/* 그리드 옵션 */
+.grids input[type="radio"] {
+    display: none;
+}
+
+.grid-option {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    height: 80%;
+    padding: 0 1rem;
+    background-color: rgb(22, 27, 34);
+}
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.5rem;
+    border-right: 2px solid rgb(168, 168, 168);
+    svg { width: 27px; height: 27px;}
+}
+.grids {
+    display: flex;
+    align-items: center;
+}
+.grids label {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+.grids label *:not(input) {
+    pointer-events: none;
+}
+.grids label:hover {
+    background-color: rgb(42, 60, 84);
+}
+.grids label[aria-checked="true"] svg {
+    fill: var(--on);
+}
+
+/* 나가기 버튼 */
+.buttons {
+    text-align: right;
+}
+.buttons button {
+    width: 5rem;
+    height: 2.2rem;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+}
+#exit {
+    background-color: var(--error-color);
+}
+#exit:hover {
+    background-color: var(--error-hover-color);
+}
