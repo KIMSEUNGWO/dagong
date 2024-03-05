@@ -42,5 +42,6 @@ public class MemberAuthorizationCheck {
     public MemberAuthority getMemberAuthority(HttpServletResponse response, Member member) {
         if (member == null) throw new NotLoginMemberException(response);
         return memberAuthority;
+        //
     }
 }
