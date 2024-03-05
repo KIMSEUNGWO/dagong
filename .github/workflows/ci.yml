@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest # 3 실행 환경 지정
-    #4 실행스텝지정
+    #4 실행스텝지
     steps:
       - uses: actions/checkout@v3
 
